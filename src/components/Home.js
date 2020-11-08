@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Home =()=>{
+const Home =({greeting})=>{
     return(
         <>
-            <h1>Saludos, Bienvenidos</h1>
+            <h1>{greeting}</h1>
         </>
     )
 }
