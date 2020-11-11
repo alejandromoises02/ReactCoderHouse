@@ -22,8 +22,10 @@ const Itemcount = ({initial, min, max, onAdd}) => {
       };
 
       const agregueAlCarrito = () => {
-        costo=costo+contador*valor;
+          
+        costo=contador*valor;
         console.log(costo);
+        onAdd(costo);
     };
     
 
