@@ -2,24 +2,40 @@ import React from 'react';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import ItemCount from './components/ItemCount';
-import Item from './components/Item';
+import ItemDetailContainer from './components/ItemDetailContainer';
+
 import './App.css';
 
 
-const count = (counter) => {
-  alert("El precio es :" + counter);
-}
 
 function App() {
   return (
     <div>
         <NavBar/>
         <Home greeting= "Hola Mundo"/>
-        <ItemCount initial={1} min={0} max={10} onAdd={count}/>
-        <Item/>
+        <ItemDetailContainer/>
+        
     </div>
   );
 }
 
     
 export default App;
+
+/*<BrowserRouter>
+      <NavBar/>
+      <Switch>
+
+        <Route exact path="/">
+          <Home/>
+        </Route>
+
+        <Route exact path="/cart">
+          
+        </Route>
+
+      </Switch>
+    
+    </BrowserRouter>
+    
+    <ItemCount initial={1} min={0} max={10} onAdd={count}/>*/

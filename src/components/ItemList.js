@@ -1,4 +1,4 @@
-export default function GetlistaProductos(){
+/*export default function GetlistaProductos(){
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(listaProducts)
@@ -261,8 +261,17 @@ const listaProducts =`
 }]`
 
 
+*/
 
+export default function getItem(){
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(item);
+    }, 3000);
+    
+  });
+}
 
-
+const item =[1, "Cheese - Pont Couvert",1549, 7];
 
   

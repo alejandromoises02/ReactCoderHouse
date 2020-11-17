@@ -31,12 +31,12 @@ const Itemcount = ({initial, min, max, onAdd}) => {
 
 
     return (
-        <>
+        <div class="card">
             <button onClick={(e) => restarAlContador(e)}> - </button>
             <input placeholder="cantidad" type="number" value={contador} />
             <button onClick={(e) => agregueAlContador(e)}> + </button>
             <button onClick={(e) => agregueAlCarrito(e)}> Agregar al carrito </button>
-        </>
+        </div>
     )
 
 }

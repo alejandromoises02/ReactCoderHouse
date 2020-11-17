@@ -46,7 +46,11 @@
   text-align: justify;
 
 }
-.card   p{
+.card  {
+  border: solid #0575E6 1px;
+}
+
+p{
   padding:10px;
   margin: 10px;
   line-height: 1.6;
