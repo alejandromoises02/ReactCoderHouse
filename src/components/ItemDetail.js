@@ -10,8 +10,8 @@ const ItemDetail = ({prod}) => {
 
   return (
     <div class="card">
-        <p>{prod}</p>
-        <ItemCount initial={1} min={0} max={10} onAdd={count}/>
+        <p>{prod.id}  {prod.nombre} {prod.precio} {prod.stock}</p>
+        <ItemCount initial={1} min={0} max={prod.stock} onAdd={count} valor={prod.precio}/>
     </div>
 )
 

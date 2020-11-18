@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import CartIcon from './CartIcon';
 
-const Itemcount = ({initial, min, max, onAdd}) => {
+const Itemcount = ({initial, min, max, onAdd, valor}) => {
 
     let costo = 0;
-    let valor = 1000;
     
     const [contador, setContador] = useState(initial);
     

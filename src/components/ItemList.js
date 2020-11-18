@@ -272,6 +272,6 @@ export default function getItem(){
   });
 }
 
-const item =[1, "Cheese - Pont Couvert",1549, 7];
+const item ={id:1, nombre:"Cheese - Pont Couvert", precio:1549, stock:7};
 
   
