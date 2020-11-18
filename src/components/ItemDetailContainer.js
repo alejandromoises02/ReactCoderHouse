@@ -8,7 +8,7 @@ import ItemDetail from './ItemDetail';
 
 const ItemDetailContainer =()=>{
 
-  const [producto, setProducto]=useState();
+  const [producto, setProducto]=useState([]);
 
   useEffect(() => {
     const Item = getItem();
