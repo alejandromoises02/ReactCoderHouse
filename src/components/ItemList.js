@@ -1,4 +1,4 @@
-/*export default function GetlistaProductos(){
+export default function GetlistaProductos(){
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(listaProducts)
@@ -6,6 +6,8 @@
     
   });
 }
+
+
 
 const listaProducts =`
 [{
@@ -261,17 +263,8 @@ const listaProducts =`
 }]`
 
 
-*/
 
-export default function getItem(){
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(item);
-    }, 3000);
-    
-  });
-}
 
-const item ={id:1, nombre:"Cheese - Pont Couvert", precio:1549, stock:7};
+
 
   

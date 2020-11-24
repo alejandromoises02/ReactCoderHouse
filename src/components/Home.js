@@ -1,5 +1,4 @@
 import React from 'react';
-import Item from './Item';
 
 const Home =({greeting})=>{
     return(
@@ -12,4 +11,3 @@ const Home =({greeting})=>{
 
 export default Home;
 
-/*<Item/>*/

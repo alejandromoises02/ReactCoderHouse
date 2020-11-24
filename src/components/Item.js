@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import GetlistaProductos from  './ItemList';
+import { Link } from 'react-router-dom';
 
 const Item =()=>{
 
@@ -17,7 +18,7 @@ return (
   {productos.length === 0 ? (
     <div>Espere un momento...</div>
   ) : (
-    <div class="card">{productos.map((element, index) => (<p>{element.id} {element.name} {element.precio} {element.stock}</p>))}</div>
+    <div class="card">{productos.map((element, index) => (<Link to={'/item/'+element.id}><p>{element.id} {element.name} {element.precio} {element.stock}</p></Link>))}</div>
   )
   }
 </>

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import getItem from  './ItemList';
-import ItemCount from './ItemCount';
+import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 
 
@@ -8,24 +7,19 @@ import ItemDetail from './ItemDetail';
 
 const ItemDetailContainer =()=>{
 
-  const [producto, setProducto]=useState([]);
+  const { id } = useParams();
 
-  useEffect(() => {
-    const Item = getItem();
-
-    Item.then((result)=>{
-        setProducto(result);
-        
-    })
-    
-  }, [])
+  useEffect(() =>{
+    console.log(id);
+  },[id])
 
   return (
-
-    <ItemDetail prod={producto}/>
+    <ItemDetail ide={id}/>
+    
     
 )
 
 }
 
 export default ItemDetailContainer;
+
