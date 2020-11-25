@@ -3,6 +3,7 @@ import CartIcon from './CartIcon';
 
 const Itemcount = ({initial, min, max, onAdd, valor}) => {
 
+
     let costo = 0;
     
     const [contador, setContador] = useState(initial);
@@ -34,15 +35,13 @@ const Itemcount = ({initial, min, max, onAdd, valor}) => {
             <button onClick={(e) => restarAlContador(e)}> - </button>
             <input placeholder="cantidad" type="number" value={contador} />
             <button onClick={(e) => agregueAlContador(e)}> + </button>
-            <button onClick={(e) => agregueAlCarrito(e)}> Agregar al carrito </button>
+            <button onClick={(e) => agregueAlCarrito(e)}> Comprar {contador}</button>
         </div>
     )
 
 }
 
 export default Itemcount;
-
-
 
 
 
