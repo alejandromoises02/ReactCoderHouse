@@ -1,36 +1,35 @@
-import React, { useEffect, useState } from "react";
-import CartIcon from './CartIcon';
-import ItemCount from './ItemCount';
-import GetlistaProductos from  './ItemList';
+// eslint-disable-next-line no-unused-vars
+import React, { useContext } from "react";
+import ItemCount from "./ItemCount";
+import {CartContext} from "../context/CartContext"
 
-const count = (counter) => {
-  alert("El precio es :" + counter);
-}
+const ItemDetail = ({ producto }) => {
+  
+const [carrito, setCarrito] = useContext(CartContext);
 
-const ItemDetail = ({ide}) => {
-
-
-  const [productos, setProductos]=useState([]);
-
-  useEffect(async() => {
-    const listaProductosJson = await GetlistaProductos();
-    const productos = JSON.parse(listaProductosJson);
-    setProductos(productos);
-  }, [])
-
-
-
+  const onAdd = (contador) => {
+    const NuevoAgregado = {cantidad: contador, producto: producto};
+    setCarrito([...carrito,NuevoAgregado])
+  };
 
   return (
-
-        <div class="card">
-        <div class="card">{productos.map((element, index) => (element.id == ide &&<div><p>{element.id} {element.name} {element.precio} {element.stock}</p><ItemCount initial={1} min={0} max={element.stock} onAdd={count} valor={element.precio}/></div>))}</div>
-        
-          </div>
-          
-
-  )
-}
+    <div class="card">
+      <div class="card">
+        <div>
+          <p>
+            {producto.id} {producto.name} {producto.precio} {producto.stock}
+          </p>
+          <ItemCount
+            initial={1}
+            min={0}
+            max={producto.stock}
+            onAdd={onAdd}
+            valor={producto.precio}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default ItemDetail;
-

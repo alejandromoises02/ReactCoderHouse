@@ -1,47 +1,37 @@
 import React, { useState } from "react";
-import CartIcon from './CartIcon';
 
-const Itemcount = ({initial, min, max, onAdd, valor}) => {
+const Itemcount = ({initial, min, max, onAdd}) => {
+  // eslint-disable-next-line no-unused-vars
+  let costo = 0;
 
+  const [contador, setContador] = useState(initial);
 
-    let costo = 0;
-    
-    const [contador, setContador] = useState(initial);
-    
-    const agregueAlContador = () => {
-        if(contador < max){
-            setContador(contador + 1);
-        }
-        
-      };
-    
-      const restarAlContador = () => {
-          if(contador > min){
-            setContador(contador - 1);
-          }
-      };
+  const agregueAlContador = () => {
+    if (contador < max) {
+      setContador(contador + 1);
+    }
+  };
 
-      const agregueAlCarrito = () => {
-          
-        costo=contador*valor;
-        console.log(costo);
-        onAdd(costo);
-    };
-    
+  const restarAlContador = () => {
+    if (contador > min) {
+      setContador(contador - 1);
+    }
+  };
 
+ 
 
-    return (
-        <div class="card">
-            <button onClick={(e) => restarAlContador(e)}> - </button>
-            <input placeholder="cantidad" type="number" value={contador} />
-            <button onClick={(e) => agregueAlContador(e)}> + </button>
-            <button onClick={(e) => agregueAlCarrito(e)}> Comprar {contador}</button>
-        </div>
-    )
-
-}
+  return (
+    <div class="card">
+      <button onClick={(e) => restarAlContador(e)}> - </button>
+      <input placeholder="cantidad" type="number" value={contador} />
+      <button onClick={(e) => agregueAlContador(e)}> + </button>
+      <button
+        onClick={() => onAdd(contador)}
+      >
+        Comprar {contador}
+      </button>
+    </div>
+  );
+};
 
 export default Itemcount;
-
-
-
