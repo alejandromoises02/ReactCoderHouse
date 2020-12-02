@@ -10,6 +10,7 @@ const [carrito, setCarrito] = useContext(CartContext);
   const onAdd = (contador) => {
     const NuevoAgregado = {cantidad: contador, producto: producto};
     setCarrito([...carrito,NuevoAgregado])
+    
   };
 
   return (

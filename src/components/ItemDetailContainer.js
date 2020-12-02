@@ -4,32 +4,31 @@ import ItemDetail from "./ItemDetail";
 import GetlistaProductos from "./ItemList";
 
 const ItemDetailContainer = () => {
-  const [productos, setProductos] = useState([]);
   const [producto, setProducto] = useState({});
+  const [loading, setLoading] = useState(false);
 
-  
-
-
-  useEffect(() => {
-    /*const fetchProduct = async () => {
-      const listaProductosJson = await GetlistaProductos();
-      const productos = JSON.parse(listaProductosJson);
-      setProductos(productos);
-    }
-    fetchProduct()*/
-    GetlistaProductos().then((res)=> JSON.parse(res)).then((data)=>{setProductos(data)})
-  },[]);
-
-  
   const { id } = useParams();
 
-  productos.forEach((item) => {
-    if (item.id === Number(id)) {
-      setProducto(item);
-    }
-  });
+  useEffect(() => {
+    setLoading(true);
+    GetlistaProductos()
+      .then((result) => JSON.parse(result))
+      .then((data) => {
+        data.forEach((item) => {
+          if (item.id === Number(id)) {
+            setProducto(item);
+          }
+        });
+        setLoading(false);
+      });
+  }, [id]);
 
-  return <ItemDetail producto={producto} />;
+  return (
+    <>
+      {loading && <span>Cargando...</span>}
+      {!loading && <ItemDetail producto={producto} />}
+    </>
+  );
 };
 
 export default ItemDetailContainer;
