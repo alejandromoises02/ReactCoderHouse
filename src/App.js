@@ -20,7 +20,7 @@ function App() {
           <NavBar/>
           <Switch>
           <Route exact path='/'>
-          <Home greeting= "Hola Mundo"/>
+          <Home greeting= "COMPUMUNDO HIPERMEGA RED"/>
           <Item/>
           </Route>
           <Route exact path='/item/:id'>
@@ -38,3 +38,7 @@ function App() {
 
     
 export default App;
+
+
+
+

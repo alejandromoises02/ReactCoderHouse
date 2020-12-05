@@ -8,8 +8,18 @@ const ItemDetail = ({ producto }) => {
 const [carrito, setCarrito] = useContext(CartContext);
 
   const onAdd = (contador) => {
-    const NuevoAgregado = {cantidad: contador, producto: producto};
-    setCarrito([...carrito,NuevoAgregado])
+    
+    let f =false;
+    carrito.forEach(element => {
+      if(element.producto.id == producto.id){
+        element.cantidad = element.cantidad + contador;
+        f = true;
+      }
+    });
+    if(f == false){
+      const NuevoAgregado = {cantidad: contador, producto: producto};
+      setCarrito([...carrito,NuevoAgregado])
+    }
     
   };
 
