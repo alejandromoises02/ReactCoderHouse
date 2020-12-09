@@ -8,6 +8,7 @@ const Home =({greeting})=>{
         <>
             <h1>{greeting}</h1>
             
+            
         </>
     )
 }

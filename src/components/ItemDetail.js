@@ -28,7 +28,7 @@ const [carrito, setCarrito] = useContext(CartContext);
       <div class="card">
         <div>
           <p>
-            {producto.id} {producto.name} {producto.precio} {producto.stock}
+            {producto.nombre} {producto.precio} {producto.stock}
           </p>
           <ItemCount
             initial={1}

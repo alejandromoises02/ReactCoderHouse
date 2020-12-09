@@ -5,6 +5,7 @@ const app = firebase.initializeApp(
     {
         apiKey: "AIzaSyC6Pr5H-Xe0f66Cgcwy0Gu8il_Pec2tUnY",
         authDomain: "coderhousereact.firebaseapp.com",
+        databaseURL: "https://coderhousereact-default-rtdb.firebaseio.com",
         projectId: "coderhousereact",
         storageBucket: "coderhousereact.appspot.com",
         messagingSenderId: "783772047049",
@@ -17,5 +18,5 @@ export const getFirebase = () =>{
 }
 
 export const getFirestore = () =>{
-    return firebase.firestore;
+    return firebase.firestore();
 }

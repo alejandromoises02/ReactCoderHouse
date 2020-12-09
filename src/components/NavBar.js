@@ -3,8 +3,8 @@ import CartIcon from './CartIcon';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
-
-
+const jog="Joggins";
+const jeans="Jeans";
 
     return (
 
@@ -12,15 +12,15 @@ const NavBar = () => {
 
             <ul className="nav-wrapper">
 
-                <a href="#"><Link to={'/'}>Inicio</Link></a>
+                <li><Link to={'/'}>Inicio</Link></li>
 
-                <a href="#"><li>Nosotros</li></a>
+                <li><Link to={'/category/'+jog}>Joggins</Link></li>
 
-                <a href="#"><li>Comprar</li></a>
+                <li><Link to={'/category/'+jeans}>Jeans</Link></li>
 
-                <a href="#"><li>Contacto</li></a>
+                <li>Contacto</li>
 
-                <a href="#"><Link to={'/cart'}><CartIcon /></Link></a>
+                <Link to={'/cart'}><CartIcon /></Link>
 
             </ul>
 

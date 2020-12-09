@@ -1,30 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
+import {getFirestore} from './../firebase/index';
 
 export const ProductContext = React.createContext([]);
 
-/*useEffect(() => {
+export const ProductProvider = ({children}) =>{
+
+    const [productos, setProductos] = useState([]);
+
+useEffect(() => {
     const db = getFirestore();
     const itemCollection = db.collection("productos");
 
     itemCollection.get().then((response) => {
-        console.log(response);
-        response.docs.map(element =>{
-            console.log(element.data())
-            return element.data
-        })
-    })
-    
-}, [])*/
+        if(response.size ===0){
+            console.log("No results!");
+        }
+        
+        const aux = response.docs.map(element =>{
+            console.log(element.data());
+            return element.data()
+        });
+        setProductos(aux);
+    }) 
+}, [])
 
 
 
 
-export const ProductProvider = ({children}) =>{
-
-    const [item, setItem,] = useState([]);
-
-    
-    return <ProductContext.Provider value={[item, setItem]}>
+    return <ProductContext.Provider value={[productos, setProductos]}>
         {children}
     </ProductContext.Provider>
 }
