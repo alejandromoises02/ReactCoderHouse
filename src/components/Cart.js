@@ -1,12 +1,32 @@
 import React, { useContext, useState } from "react";
 import {CartContext} from "../context/CartContext"
 import { Link } from 'react-router-dom';
-import { getFirestore } from "../firebase/index";
+import { getFirestore } from '../firebase/index';
+
 
 
 const Cart =()=>{
  
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email , setEmail ] = useState("");
     const [carrito, setCarrito] = useContext(CartContext);
+
+  
+
+    const NombreInputChange = (event) => {
+      setName({[event.target.name] : event.target.value})
+      console.log(name);
+  }
+
+    const PhoneInputChange = (event) => {
+      setPhone({[event.target.name] : event.target.value})
+      console.log(phone);
+  }
+    const EmailInputChange = (event) => {
+      setEmail({[event.target.name] : event.target.value})
+      console.log(email);
+    }
 
     const comprar = () => {
       let c=0;
@@ -15,8 +35,9 @@ const Cart =()=>{
       });
 
       let venta = {
-        buyer : {name:"name", phone:"phone", email:"email"},
+        buyer : {name:name, phone:phone, email:email},
         items : carrito,
+        date  : "hoy",//getFirestore.firestore.Timestamp.fromDate(new Date()),
         total : c
       }
       console.log(venta);
@@ -43,10 +64,11 @@ return (
   ) : (<>
     <div class="card">{carrito.map((element, index) => (<p>{element.cantidad} {element.producto.nombre} {element.producto.precio}</p>))}</div>
     <label for="nombre">Introduce tu nombre</label>
-    <input type="text" name="nombre" id="nombre"></input>
+    <input type="text" name="nombre" onChange={NombreInputChange} id="nombre"></input>
     <label for="numero">Introduce tu numero</label>
-    <input type="text" name="numero" id="numero"></input>
-    <input type="text" name="email" id="email"/>
+    <input type="text" name="numero" onChange={PhoneInputChange} id="numero"></input>
+    <label for="numero">Introduce tu email</label>
+    <input type="text" name="email" onChange={EmailInputChange} id="email"/>
     <button onClick={(e) => comprar(e)}> Comprar </button>
     </>
   )

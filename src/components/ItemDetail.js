@@ -32,7 +32,7 @@ const [carrito, setCarrito] = useContext(CartContext);
           </p>
           <ItemCount
             initial={1}
-            min={0}
+            min={1}
             max={producto.stock}
             onAdd={onAdd}
             valor={producto.precio}

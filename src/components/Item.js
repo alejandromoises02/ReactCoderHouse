@@ -7,6 +7,8 @@ const Item =()=>{
 
   const [productos, setProductos] = useContext(ProductContext);
 
+  
+
   /*const [productos, setProductos]=useState([]);
 
   useEffect(async() => {
