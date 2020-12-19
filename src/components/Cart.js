@@ -37,7 +37,7 @@ const Cart =()=>{
       let venta = {
         buyer : {name:name, phone:phone, email:email},
         items : carrito,
-        date  : "hoy",//getFirestore.firestore.Timestamp.fromDate(new Date()),
+        date  : new Date(),//getFirestore.firestore.Timestamp.fromDate(new Date()),
         total : c
       }
       console.log(venta);
@@ -81,4 +81,3 @@ return (
 export default Cart;
 
 
-    
