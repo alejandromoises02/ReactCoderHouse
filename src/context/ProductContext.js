@@ -1,28 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {getFirestore} from './../firebase/index';
+import {CartContext} from "../context/CartContext";
 
 export const ProductContext = React.createContext([]);
 
 export const ProductProvider = ({children}) =>{
+    const [carrito, setCarrito] = useContext(CartContext);
 
     const [productos, setProductos] = useState([]);
 
 useEffect(() => {
     const db = getFirestore();
     const itemCollection = db.collection("productos");
+    const destacado = itemCollection.where('destacado', '==', true);
 
-    itemCollection.get().then((response) => {
+    destacado.get().then((response) => {
         if(response.size ===0){
             console.log("No results!");
         }
         
         const aux = response.docs.map(element =>{
-            console.log(element.data());
-            return element.data()
+            return {...element.data(), id:element.id};
         });
         setProductos(aux);
     }) 
-}, [])
+}, [carrito])
 
 
 

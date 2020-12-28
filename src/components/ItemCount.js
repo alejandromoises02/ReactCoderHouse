@@ -21,10 +21,12 @@ const Itemcount = ({initial, min, max, onAdd}) => {
  
 
   return (
-    <div class="card">
+    <div className="d-flex flex-column">
+      <div>
       <button onClick={(e) => restarAlContador(e)}> - </button>
       <input placeholder="cantidad" type="number" value={contador} />
       <button onClick={(e) => agregueAlContador(e)}> + </button>
+      </div>
       <button
         onClick={() => onAdd(contador)}
       >

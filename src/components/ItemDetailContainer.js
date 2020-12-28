@@ -19,12 +19,19 @@ const ItemDetailContainer = () => {
         if(response.size ===0){
             console.log("No results!");
         }
-        const aux =response.data();
+        /*let aux = response.data();
+        aux.push(id);
+        console.log(aux);*/
         /*const aux = response.docs.map(element =>{
-            console.log(element.data());
-            return element.data()*/
-            setProducto(aux);
-        });
+          return {...element.data(), id:element.id};
+            
+        });*/
+        const aux = response.data();
+        
+        setProducto(aux);
+       })
+      
+         
         
     },[id]) 
 

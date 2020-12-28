@@ -6,24 +6,16 @@ import {ProductCatContext} from "../context/ProductCatContext"
 
 const ItemCategoria =()=>{
 
-  const [productos, setProductos] = useContext(ProductContext);
   const [productosC, setProductosC] = useContext(ProductCatContext);
-  /*const [productos, setProductos]=useState([]);
-
-  useEffect(async() => {
-    const listaProductosJson = await GetlistaProductos();
-    const productos = JSON.parse(listaProductosJson);
-    setProductos(productos);
-  }, [])*/
-
+  
 
 return (
   <>
-  {productos.length === 0 ? (
+  {productosC.length === 0 ? (
     <div>Espere un momento...</div>
   ) : (
-    <div class="card">{productosC.map((element, index) => (<Link to={'/item/'+element.id}><p>{element.nombre} {element.precio} {element.stock}</p></Link>))}</div>
-  )
+    <div class="row d-flex justify-content-around">{productosC.map((element, index) => (<Link class="col-sm-4 d-flex flex-column vista" to={'/item/'+element.id}><h2>{element.nombre}</h2> <img class="img-fluid" src={element.img} alt={element.id}/><p>${element.precio}</p> <p>Disponibles: {element.stock}</p></Link>))}</div>
+   )
   }
 </>
 )

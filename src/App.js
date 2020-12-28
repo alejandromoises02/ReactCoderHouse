@@ -10,6 +10,9 @@ import {ProductProvider} from './context/ProductContext';
 import {ProductCatProvider} from './context/ProductCatContext';
 import './App.css';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import Process from './components/Process';
+import {AggProvider} from './context/AggContext';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
@@ -17,32 +20,38 @@ function App() {
 
 
   return (
-    <div>
+    <div class="container">
       <ProductProvider>
       <CartProvider>
-        <BrowserRouter>
-          <NavBar/>
-          <Switch>
-          <Route exact path='/'>
-          <Home greeting= "COMPUMUNDO HIPERMEGA RED"/>
-          <Item/>
-          </Route>
+        <AggProvider>
+          <BrowserRouter>
+            <NavBar/>
+            <Switch>
+            <Route exact path='/'>
+            <Home greeting= "CharmClothes"/>
+            <Item/>
+            </Route>
 
-          <Route exact path='/item/:id'>
-          <ItemDetailContainer/>
-          </Route>
+            <Route exact path='/item/:id'>
+            <ItemDetailContainer/>
+            </Route>
 
-          <Route exact path='/category/:categoria'>
-          <ProductCatProvider>
-          <ItemCategoria/>
-          </ProductCatProvider>
-          </Route>
+            <Route exact path='/category/:categoria'>
+            <ProductCatProvider>
+            <ItemCategoria/>
+            </ProductCatProvider>
+            </Route>
 
-          <Route exact path='/cart'>
-          <Cart/>
-          </Route>
-          </Switch>
-        </BrowserRouter>  
+            <Route exact path='/process'>
+            <Process/>
+            </Route>
+
+            <Route exact path='/cart'>
+            <Cart/>
+            </Route>
+            </Switch>
+          </BrowserRouter>  
+        </AggProvider>
       </CartProvider>
       </ProductProvider>
     </div>

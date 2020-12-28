@@ -20,8 +20,7 @@ useEffect(() => {
         }
         
         const aux = response.docs.map(element =>{
-            console.log(element.data());
-            return element.data()
+            return {...element.data(), id:element.id};
         });
         setProductosC(aux);
     }) 
