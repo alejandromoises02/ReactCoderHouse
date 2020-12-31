@@ -15,7 +15,7 @@ const Cart =()=>{
 return (
     <>
     {carrito.length === 0 ? (
-    <div>Aun no has cargado productos a tu carrito!!! compra <Link to={'/'}>aqui</Link>!!!</div>
+    <div className="d-flex justify-content-around"><p className="mesagge">Aun no has cargado productos a tu carrito!!! Mira nuestras ofertas <Link to={'/'}>aqui</Link>!!!</p></div>
   ) : (<>
   <div class="comprar container">
 <div class="align-self-center">

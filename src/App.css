@@ -331,6 +331,7 @@ h1{
 
 p{
   color: black;
+<<<<<<< HEAD
   font-size: 25px;
 }
 
@@ -338,3 +339,10 @@ input {
   margin: 20px
 }
 /*# sourceMappingURL=styles.css.map */
+=======
+}
+
+.mesagge{
+  padding-top: 150px;
+}
+>>>>>>> origin/RFI
