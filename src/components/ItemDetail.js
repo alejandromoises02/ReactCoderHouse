@@ -14,12 +14,12 @@ const [agregado, setAgregado] = useContext(AggContext);
     
     let f =false;
     carrito.forEach(element => {
-      if(element.producto.id == producto.id){
+      if(element.producto.id === producto.id){
         element.cantidad = element.cantidad + contador;
         f = true;
       }
     });
-    if(f == false){
+    if(f === false){
       const NuevoAgregado = {cantidad: contador, producto: producto};
       setCarrito([...carrito,NuevoAgregado])
     }
@@ -31,7 +31,7 @@ const [agregado, setAgregado] = useContext(AggContext);
       <div>
         <div>
           <div className="row"> 
-          <h2 className ="col-12">{producto.nombre}</h2> <img class="img-fluid" src={producto.img} alt={producto.id}/><div className="d-flex flex-column"><p>${producto.precio}</p> <p>Disponibles: {producto.stock}</p><ItemCount
+          <h2 className ="col-12">{producto.nombre}</h2> <img className="img-fluid" src={producto.img} alt={producto.id}/><div className="d-flex flex-column"><p>${producto.precio}</p> <p>Disponibles: {producto.stock}</p><ItemCount
             initial={1}
             min={1}
             max={producto.stock}

@@ -16,9 +16,16 @@ const ItemDetailContainer = () => {
     const idItem = itemCollection.doc(id);
 
     idItem.get().then((response) => {
-        if(response.size ===0){
+
+      if(response.exists){
+        setProducto({id:response.id, ...response.data() });
+      } else {
+        console.log("No se encontro el producto.");
+      }
+
+        /*if(response.size ===0){
             console.log("No results!");
-        }
+        }*/
         /*let aux = response.data();
         aux.push(id);
         console.log(aux);*/
@@ -26,10 +33,10 @@ const ItemDetailContainer = () => {
           return {...element.data(), id:element.id};
             
         });*/
-        const aux = response.data();
+        /*const aux = response.data();
         
-        setProducto(aux);
-       })
+        setProducto(aux);*/
+       });
       
          
         

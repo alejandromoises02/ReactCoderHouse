@@ -10,7 +10,6 @@ import {ProductProvider} from './context/ProductContext';
 import {ProductCatProvider} from './context/ProductCatContext';
 import './App.css';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
-import Process from './components/Process';
 import {AggProvider} from './context/AggContext';
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -40,10 +39,6 @@ function App() {
             <ProductCatProvider>
             <ItemCategoria/>
             </ProductCatProvider>
-            </Route>
-
-            <Route exact path='/process'>
-            <Process/>
             </Route>
 
             <Route exact path='/cart'>
