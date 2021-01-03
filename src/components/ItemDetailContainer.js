@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
       if(response.exists){
         setProducto({id:response.id, ...response.data() });
       } else {
-        console.log("No se encontro el producto.");
+        alert("No se encontro el producto.");
       }
        });
     },[id]) 

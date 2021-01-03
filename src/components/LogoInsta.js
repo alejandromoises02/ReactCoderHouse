@@ -5,7 +5,7 @@ const LogoInsta =()=>{
     
     return(
         <>
-            <a href="https://www.instagram.com/" target="_blank"><img height="30" alt="logo" src={logo2}/></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"><img height="30" alt="logo" src={logo2}/></a>
         </>
     )
 }

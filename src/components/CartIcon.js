@@ -22,7 +22,7 @@ const CartIcon =()=>{
     return(
         <>
             <div>{cont}</div>
-            <img src={cart}/>
+            <img src={cart} alt="compras"/>
         </>
     )
 }

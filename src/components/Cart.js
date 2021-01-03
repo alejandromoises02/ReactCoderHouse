@@ -10,9 +10,6 @@ const Cart =()=>{
   const [carrito, setCarrito] = useContext(CartContext);
   
     
-
-   
-    
 return (
     <>
     {carrito.length === 0 ? (
@@ -46,9 +43,6 @@ return (
 
 </div>
 </div>
-
-    
-    
     </>
   )
   }

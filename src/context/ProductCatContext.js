@@ -16,7 +16,7 @@ useEffect(() => {
 
     categorias.get().then((response) => {
         if(response.size ===0){
-            console.log("No results!");
+            alert("No existe esta categoria");
         }
         
         const aux = response.docs.map(element =>{

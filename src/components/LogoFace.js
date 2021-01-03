@@ -5,7 +5,7 @@ const LogoFace =()=>{
     
     return(
         <>
-            <a href="https://es-la.facebook.com/" target="_blank"><img height="30" alt="logo" src={logo2}/></a>
+            <a href="https://es-la.facebook.com/" target="_blank" rel="noreferrer"><img height="30" alt="logo" src={logo2}/></a>
         </>
     )
 }

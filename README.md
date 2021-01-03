@@ -68,3 +68,38 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+CHARMCLOTHES-CODERHOUSE REACT JS
+
+Proyecto desarrollado para la obtención de certificado de aprobación de curso REACT JS dictado por Coder por medio del profesor Cristian Hourcade.
+
+DEPENDENCIAS
+
+"@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.1",
+    "@testing-library/user-event": "^12.1.10",
+    "bootstrap": "^4.5.3",
+    "firebase": "^8.1.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.0",
+    "web-vitals": "^0.2.4"
+
+REQUISITOS DE INSTALACION
+
+Git
+npm
+Editor de texto(DESARROLLADO EN VSC)
+
+DEPLOY
+Deploy con github pages http://alejandromoises02.github.io/ReactCoderHouse
+
+Autor
+Alejandro Fertnandez https://github.com/alejandromoises02/
+
+AGRADECIMIENTOS 
+Al profesor Cristian Hourcado por aparecer cual superman a salvar el curso
+A los tutotes Jose Friedrich, Tomas Rodriguez, Fabricio Borgobello, Ruben Mavarez.
+

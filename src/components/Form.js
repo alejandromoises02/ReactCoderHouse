@@ -32,7 +32,7 @@ const Form =()=>{
 
     const procesar = () => {
 
-      if(name.length != 0 && phone.length != 0 && email.length != 0 && email===emailC){
+      if(name.length !== 0 && phone.length !== 0 && email.length !== 0 && email===emailC){
       
       
       let c=0;
