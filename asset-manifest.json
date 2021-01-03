@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/ReactCoderHouse/static/css/main.6a168bed.chunk.css",
+    "main.js": "/ReactCoderHouse/static/js/main.49aef157.chunk.js",
+    "main.js.map": "/ReactCoderHouse/static/js/main.49aef157.chunk.js.map",
+    "runtime-main.js": "/ReactCoderHouse/static/js/runtime-main.e39fcf26.js",
+    "runtime-main.js.map": "/ReactCoderHouse/static/js/runtime-main.e39fcf26.js.map",
+    "static/css/2.20aa2d7b.chunk.css": "/ReactCoderHouse/static/css/2.20aa2d7b.chunk.css",
+    "static/js/2.516b6224.chunk.js": "/ReactCoderHouse/static/js/2.516b6224.chunk.js",
+    "static/js/2.516b6224.chunk.js.map": "/ReactCoderHouse/static/js/2.516b6224.chunk.js.map",
+    "static/js/3.213638fd.chunk.js": "/ReactCoderHouse/static/js/3.213638fd.chunk.js",
+    "static/js/3.213638fd.chunk.js.map": "/ReactCoderHouse/static/js/3.213638fd.chunk.js.map",
+    "index.html": "/ReactCoderHouse/index.html",
+    "static/css/2.20aa2d7b.chunk.css.map": "/ReactCoderHouse/static/css/2.20aa2d7b.chunk.css.map",
+    "static/css/main.6a168bed.chunk.css.map": "/ReactCoderHouse/static/css/main.6a168bed.chunk.css.map",
+    "static/js/2.516b6224.chunk.js.LICENSE.txt": "/ReactCoderHouse/static/js/2.516b6224.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/ReactCoderHouse/static/media/fondo.6e96caa9.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e39fcf26.js",
+    "static/css/2.20aa2d7b.chunk.css",
+    "static/js/2.516b6224.chunk.js",
+    "static/css/main.6a168bed.chunk.css",
+    "static/js/main.49aef157.chunk.js"
+  ]
+}
