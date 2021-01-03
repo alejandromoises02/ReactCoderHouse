@@ -22,36 +22,8 @@ const ItemDetailContainer = () => {
       } else {
         console.log("No se encontro el producto.");
       }
-
-        /*if(response.size ===0){
-            console.log("No results!");
-        }*/
-        /*let aux = response.data();
-        aux.push(id);
-        console.log(aux);*/
-        /*const aux = response.docs.map(element =>{
-          return {...element.data(), id:element.id};
-            
-        });*/
-        /*const aux = response.data();
-        
-        setProducto(aux);*/
        });
-      
-         
-        
     },[id]) 
-
-
-    /*setLoading(true);
-    productos.forEach((item) => {
-          if (item.id == id) {
-            setProducto(item);
-          }
-        });
-        setLoading(false);
-      
-  }, [id]);*/
 
   return (
     <>

@@ -17,22 +17,19 @@ const Form =()=>{
 
     const NombreInputChange = (event) => {
       setName({[event.target.name] : event.target.value})
-      console.log(name);
   }
 
     const PhoneInputChange = (event) => {
       setPhone({[event.target.name] : event.target.value})
-      console.log(phone);
   }
     const EmailInputChange = (event) => {
       setEmail({[event.target.name] : event.target.value})
-      console.log(email);
     }
 
     const procesar = () => {
       if(name.length != 0 && phone.length != 0 && email.length != 0){
       
-      console.log("entro");
+      
       let c=0;
       carrito.forEach(element => {
         c=c+(element.producto.precio*element.cantidad);
@@ -44,7 +41,6 @@ const Form =()=>{
         date  : new Date(),
         total : c
       }
-      console.log(venta);
       const db = getFirestore();
       db.collection("Ventas").add(venta)
       .then(({id}) => {
@@ -56,7 +52,6 @@ const Form =()=>{
         db.collection("productos").doc(element.producto.id).update(element.producto)
       });
        setCarrito([]);
-       console.log(carrito);
        
       }
     }

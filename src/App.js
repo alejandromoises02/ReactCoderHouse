@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import Home from './components/Home';
 import Cart from './components/Cart';
 import ItemDetailContainer from './components/ItemDetailContainer';
@@ -19,6 +20,7 @@ function App() {
 
 
   return (
+    <>
     <div class="container">
       <ProductProvider>
       <CartProvider>
@@ -50,6 +52,8 @@ function App() {
       </CartProvider>
       </ProductProvider>
     </div>
+    <Footer/>
+    </>
   );
 }
 

@@ -8,6 +8,7 @@ import Form from "./Form";
 const Cart =()=>{
 
   const [carrito, setCarrito] = useContext(CartContext);
+  
     
 
    
@@ -24,8 +25,19 @@ return (
 <div class="facturaDatos">
 <div id="factura" class="col-6">
 
-<div className='elementoCarrito row'><p className='col-2'>Cantidad</p><p className='col-6'>Descripcion</p><p className='col-2'>Precio Unitario</p><p className='col-2'>Precio Total</p></div>
-  {carrito.map((element, index) => (<div className='elementoCarrito row'><p className='col-2'>{element.cantidad}</p> <p className='col-6'>{element.producto.nombre}</p> <p className='col-2'>{element.producto.precio}</p><p className='col-2'>{element.producto.precio*element.cantidad}</p></div>
+<div className='elementoCarrito row'>
+  <p className='col-2'>Cantidad</p>
+  <p className='col-6'>Descripcion</p>
+  <p className='col-2'>Precio Unitario</p>
+  <p className='col-2'>Precio Total</p>
+  </div>
+  {carrito.map((element, index) => (
+  <div className='elementoCarrito row'>
+    <p className='col-2'>{element.cantidad}</p>
+    <p className='col-6'>{element.producto.nombre} {element.producto.TallaE} {element.producto.ColorE}</p>
+    <p className='col-2'>{element.producto.precio}</p>
+    <p className='col-2'>{element.producto.precio*element.cantidad}</p>
+    </div>
     
     ))}
 

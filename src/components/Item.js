@@ -8,7 +8,6 @@ const Item =()=>{
 
 
   const [productos, setProductos] = useContext(ProductContext);
-  console.log(productos);
 
   
 return (

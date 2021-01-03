@@ -1,7 +1,7 @@
 import React from "react";
-import logo2 from './img/logo2.png';
+import logo2 from './img/logoWhs.png';
 
-const LogoIcon =()=>{
+const logoWhs =()=>{
     
     return(
         <>
@@ -10,4 +10,4 @@ const LogoIcon =()=>{
     )
 }
 
-export default LogoIcon;
+export default logoWhs;
