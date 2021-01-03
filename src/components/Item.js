@@ -19,7 +19,7 @@ return (
 
       (
         
-        <Link className="col-sm-3 d-flex flex-column vista" to={'/item/'+element.id}><h2>{element.nombre}</h2> <img className="img-fluid" src={element.img} alt={element.id}/><p>${element.precio}</p> <p>Disponibles: {element.stock}</p></Link>
+        <Link key={index} className="col-sm-3 d-flex flex-column vista" to={'/item/'+element.id}><h2>{element.nombre}</h2> <img className="img-fluid" src={element.img} alt={element.id}/><p>${element.precio}</p> <p>Disponibles: {element.stock}</p></Link>
         
         )
       

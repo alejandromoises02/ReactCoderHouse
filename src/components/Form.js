@@ -75,37 +75,37 @@ const Form =()=>{
 
        
             
-                <div class="form-row">
-                  <div class="col">
+                <div className="form-row">
+                  <div className="col">
                     <label for="nombre">Introduce tu Nombre</label>
                     <input type="text" name="nombre" onChange={NombreInputChange} id="nombre" required/>
                   </div>
             </div>
 
-                  <div class="form-row">
-                  <div class="col">
+                  <div className="form-row">
+                  <div className="col">
                     <label for="numero">Introduce tu Numero</label>
                     <input type="text" name="numero" onChange={PhoneInputChange} id="numero" required/>
                     </div>
             </div>
 
 
-            <div class="form-row">
-              <div class="form-group col-md-12">
+            <div className="form-row">
+              <div className="form-group col-md-12">
                 <label for="email">Introduce tu Email</label>
                 <input type="email" name="email" onChange={EmailInputChange} id="email" required/>
                 </div>
             </div>
 
-            <div class="form-row">
-              <div class="form-group col-md-12">
+            <div className="form-row">
+              <div className="form-group col-md-12">
                 <label for="email">Introduce tu Email nuevamente</label>
                 <input type="email" name="email" onChange={EmailconfInputChange} id="email" required/>
                 </div>
             </div>
 
-            <div class="form-group col-md-12">
-            <button onClick={(e) => procesar(e)} class="btn btn-success">Confirmar Compra</button>
+            <div className="form-group col-md-12">
+            <button onClick={(e) => procesar(e)} className="btn btn-success">Confirmar Compra</button>
             
             </div>
           </form> 

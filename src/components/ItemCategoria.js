@@ -14,7 +14,7 @@ return (
   {productosC.length === 0 ? (
     <div>Espere un momento...</div>
   ) : (
-    <div className="row d-flex justify-content-around">{productosC.map((element, index) => (<Link className="col-sm-4 d-flex flex-column vista" to={'/item/'+element.id}><h2>{element.nombre}</h2> <img className="img-fluid" src={element.img} alt={element.id}/><p>${element.precio}</p> <p>Disponibles: {element.stock}</p></Link>))}</div>
+    <div className="row d-flex justify-content-around">{productosC.map((element, index) => (<Link key={index} className="col-sm-4 d-flex flex-column vista" to={'/item/'+element.id}><h2>{element.nombre}</h2> <img className="img-fluid" src={element.img} alt={element.id}/><p>${element.precio}</p> <p>Disponibles: {element.stock}</p></Link>))}</div>
    )
   }
 </>

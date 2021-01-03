@@ -7,8 +7,13 @@ const ItemDetail = ({ producto }) => {
   
 const [carrito, setCarrito] = useContext(CartContext);
 const [agregado, setAgregado] = useContext(AggContext);
-const [TallaE, setTallaE] = useState(producto.TallaE);
-const [ColorE, setColorE] = useState(producto.ColorE);
+const [TallaE, setTallaE] = useState("");
+const [ColorE, setColorE] = useState("");
+
+useEffect(() => {
+  setTallaE(producto.TallaE);
+  setColorE(producto.ColorE);
+  },[producto]) 
 
 const InputTalla= (event) => {
   setTallaE(event.target.value);
@@ -27,18 +32,19 @@ const InputColor= (event) => {
 
     let f = false;
     carrito.forEach(element => {
-      if(element.producto.id === producto.id && element.producto.TallaE === producto.TallaE && element.producto.ColorE === producto.ColorE){
+      if(element.producto.id === producto.id && element.Talla === TallaE && element.Color === ColorE){
         element.cantidad = element.cantidad + contador;
         f = true;
       }
     });
     if(f === false){
-      let prod = producto;
-      prod.TallaE = TallaE;
-      prod.ColorE = ColorE;
-      const NuevoAgregado = {cantidad: contador, producto: prod};
-      
-      setCarrito([...carrito,NuevoAgregado])
+      const newItem = {
+        cantidad: contador,
+        producto: producto,
+        Color: ColorE,
+        Talla: TallaE,
+      };
+      setCarrito([...carrito,newItem])
       
     }
   setAgregado(true);
@@ -63,7 +69,7 @@ const InputColor= (event) => {
               <p>Color</p>
               <select className="form-control color" onChange={InputColor} >
               {producto?.Color?.map((element, index) => 
-                <option value={element}>{element}</option>)}
+                <option key={index} value={element}>{element}</option>)}
               </select>
             </div>
 
@@ -71,7 +77,7 @@ const InputColor= (event) => {
               <p>Talla</p>
               <select className="form-control color" onChange={InputTalla} >
               {producto?.Talla?.map((element, index) => 
-                <option value={element}>{element}</option>)}
+                <option key={index} value={element}>{element}</option>)}
               </select>
             </div>
 
