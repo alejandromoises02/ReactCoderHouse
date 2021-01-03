@@ -7,17 +7,18 @@ const ItemDetail = ({ producto }) => {
   
 const [carrito, setCarrito] = useContext(CartContext);
 const [agregado, setAgregado] = useContext(AggContext);
-
+const [TallaE, setTallaE] = useState(producto.TallaE);
+const [ColorE, setColorE] = useState(producto.ColorE);
 
 const InputTalla= (event) => {
-  producto.TallaE = event.target.value;
-  console.log(producto.TallaE);
+  setTallaE(event.target.value);
+  console.log(TallaE);
   console.log(carrito);
 }
 
 const InputColor= (event) => {
-  producto.ColorE = event.target.value;
-  console.log(producto.ColorE);
+  setColorE(event.target.value);
+  console.log(ColorE);
   console.log(carrito);
 }
 
@@ -32,7 +33,10 @@ const InputColor= (event) => {
       }
     });
     if(f === false){
-      const NuevoAgregado = {cantidad: contador, producto: producto};
+      let prod = producto;
+      prod.TallaE = TallaE;
+      prod.ColorE = ColorE;
+      const NuevoAgregado = {cantidad: contador, producto: prod};
       
       setCarrito([...carrito,NuevoAgregado])
       
