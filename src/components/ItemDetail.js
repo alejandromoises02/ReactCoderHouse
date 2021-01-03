@@ -11,16 +11,20 @@ const [agregado, setAgregado] = useContext(AggContext);
 
 const InputTalla= (event) => {
   producto.TallaE = event.target.value;
+  console.log(producto.TallaE);
+  console.log(carrito);
 }
 
 const InputColor= (event) => {
   producto.ColorE = event.target.value;
+  console.log(producto.ColorE);
+  console.log(carrito);
 }
 
 
   const onAdd = (contador) => {
 
-    let f =false;
+    let f = false;
     carrito.forEach(element => {
       if(element.producto.id === producto.id && element.producto.TallaE === producto.TallaE && element.producto.ColorE === producto.ColorE){
         element.cantidad = element.cantidad + contador;
@@ -85,9 +89,3 @@ const InputColor= (event) => {
 
 export default ItemDetail;
 
-
-
-/*{producto.Color.map((element, index) => {
-  <option>{element}</option>
-}
-  )}*/

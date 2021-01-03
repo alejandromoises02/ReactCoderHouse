@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import {CartContext} from "../context/CartContext";
 import { getFirestore } from '../firebase/index';
-import { Link } from 'react-router-dom';
 
 
 
@@ -10,7 +9,8 @@ const Form =()=>{
 
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
-    const [email , setEmail ] = useState("");
+    const [email , setEmail] = useState("");
+    const [emailC , setEmailC] = useState("");
     const [carrito, setCarrito] = useContext(CartContext);
 
   
@@ -26,8 +26,13 @@ const Form =()=>{
       setEmail({[event.target.name] : event.target.value})
     }
 
+    const EmailconfInputChange = (event) => {
+      setEmailC({[event.target.name] : event.target.value})
+    }
+
     const procesar = () => {
-      if(name.length != 0 && phone.length != 0 && email.length != 0){
+
+      if(name.length != 0 && phone.length != 0 && email.length != 0 && email===emailC){
       
       
       let c=0;
@@ -54,6 +59,8 @@ const Form =()=>{
        setCarrito([]);
        
       }
+      else{
+        alert("Introduce nuevamente tus datos");}
     }
 
 
@@ -87,6 +94,13 @@ const Form =()=>{
               <div class="form-group col-md-12">
                 <label for="email">Introduce tu Email</label>
                 <input type="email" name="email" onChange={EmailInputChange} id="email" required/>
+                </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="email">Introduce tu Email nuevamente</label>
+                <input type="email" name="email" onChange={EmailconfInputChange} id="email" required/>
                 </div>
             </div>
 

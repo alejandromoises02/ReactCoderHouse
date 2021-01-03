@@ -28,7 +28,7 @@ function App() {
           <BrowserRouter>
             <NavBar/>
             <Switch>
-            <Route exact path='/'>
+            <Route exact path='/ReactCoderHouse'>
             <Home greeting= "CharmClothes"/>
             <Item/>
             </Route>
