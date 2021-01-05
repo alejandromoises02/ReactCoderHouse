@@ -58,22 +58,6 @@ const swe = "Sweaters"
             </div>
             </div>
         </nav>
-
-
-
-
-
-
-        
-     
-        
-    
-    
-
-
-
-      
-        
         </>
     )
 

@@ -6,7 +6,6 @@ import {getFirestore} from './../firebase/index';
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState({});
   const [loading, setLoading] = useState(false);
-  /*const [productos, setProductos] = useContext(ProductContext);*/
 
   const { id } = useParams();
 

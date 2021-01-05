@@ -17,14 +17,10 @@ useEffect(() => {
 
 const InputTalla= (event) => {
   setTallaE(event.target.value);
-  console.log(TallaE);
-  console.log(carrito);
 }
 
 const InputColor= (event) => {
   setColorE(event.target.value);
-  console.log(ColorE);
-  console.log(carrito);
 }
 
 

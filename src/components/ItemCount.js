@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const Itemcount = ({initial, min, max, onAdd}) => {
-  // eslint-disable-next-line no-unused-vars
   let costo = 0;
 
   const [contador, setContador] = useState(initial);
